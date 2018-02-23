@@ -33,6 +33,14 @@ server.route(require('./routes/users/putUserById'));
  */
 server.route(require('./routes/posts/getPostById'));
 
+/**
+ * profils routes
+ */
+server.route(require("./routes/profils/getProfils"));
+server.route(require("./routes/profils/getProfilById"));
+
+
+
 async function start() {
     await server.register({
         plugin: require('./plugins/token'),
