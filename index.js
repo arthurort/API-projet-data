@@ -39,14 +39,19 @@ server.route(require('./routes/posts/getPostById'));
 server.route(require("./routes/profils/getProfils"));
 server.route(require("./routes/profils/getProfilById"));
 
+/**
+ * mvts routes
+ */
+server.route(require("./routes/mvts/getMvtsByProfilId"));
+server.route(require("./routes/mvts/getMvtsByProfilIdPerDay"));
+
 
 
 async function start() {
     await server.register({
-        plugin: require('./plugins/token'),
-        options: {
-            name: 'toto'
-        }
+        // plugin: require('./plugins/cors')
+        plugin: require('./plugins/token')
+
     });
 
     try {
